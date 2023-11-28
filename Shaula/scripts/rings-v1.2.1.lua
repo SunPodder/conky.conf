@@ -47,7 +47,7 @@ settings_table = {
         end_angle=270
     },
     {
-        name='acpitemp',
+        name='hwmon 1 temp 1',
         arg='',
         max=100,
         bg_colour=0xC4C4C4,
