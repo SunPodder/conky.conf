@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# SSID_NAME=$(/sbin/iwgetid -r)
+#
+# if [[ "${SSID_NAME}" != "" ]]; then
+# 	if  [[ $1 = "-i" ]]; then
+#     echo "  ${SSID_NAME}"
+# 	else
+#     echo "${SSID_NAME}"
+# 	fi
+# else
+# echo "Not Connected"
+# fi
+#
+# exit
+
+
+#!/bin/bash
+
+# Get the interface name for the wired connection
+INTERFACE_NAME=$(ip route | awk '/default/ {print $5}')
+
+if [[ "${INTERFACE_NAME}" != "" ]]; then
+    if [[ $1 = "-i" ]]; then
+        echo "  ${INTERFACE_NAME}"  # Adjust the icon as needed
+    else
+        echo "${INTERFACE_NAME}"
+    fi
+else
+    echo "Not Connected"
+fi
+
+exit
+
+
